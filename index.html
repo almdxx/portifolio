@@ -6,35 +6,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Cadu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
-    <header>
+    <header data-aos="fade-down">
         <h1>Portfólio de Carlos Eduardo</h1>
     </header>
 
     <main>
-        <section class="apresentacao">
-            <h2>
-                Desenvolvedor em formação, apaixonado por tecnologia, aprendizado constante e por criar 
-                <strong>soluções digitais que realmente fazem a diferença</strong>.
-            </h2>
+        <section class="apresentacao" data-aos="fade-in">
+            <h2 id="headline-dinamica"></h2>
             <p>
                 Olá! Me chamo Carlos, sou estudante de Análise e Desenvolvimento de Sistemas e estou me aprofundando no universo da programação. Tenho interesse especial em Python e estou explorando o desenvolvimento web com JavaScript. Este portfólio é um espaço onde compartilho meus projetos, aprendizados e evolução como futuro desenvolvedor.
             </p>
-            <img src="cadu.png" alt="Foto de perfil">
+            <img src="foto cadu.png" alt="Foto de perfil">
         </section>
 
-        <section class="links">
+        <section class="habilidades" data-aos="fade-up">
+            <h2>Habilidades Técnicas</h2>
+            <div class="habilidades-container">
+                <div class="skill-badge">Python</div>
+                <div class="skill-badge">FastAPI</div>
+                <div class="skill-badge">Pandas</div>
+                <div class="skill-badge">JavaScript</div>
+                <div class="skill-badge">HTML5</div>
+                <div class="skill-badge">CSS3</div>
+                <div class="skill-badge">SQL</div>
+                <div class="skill-badge">Git</div>
+            </div>
+        </section>
+
+        <section class="links" data-aos="fade-up">
             <h3>Me acompanhe:</h3>
-            <a href="https://instagram.com/c_almeidax" target="_blank">Instagram</a>
-            <a href="https://github.com/almdxx" target="_blank">GitHub</a>
+            <a href="https://instagram.com/c_almeidax" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://github.com/almdxx" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </section>
+
+        <section class="projetos">
+            <h2 data-aos="fade-up">Meus Projetos</h2>
+            <div class="projetos-container">
+
+                <div class="projeto-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Sistema de Análise de Estoque</h3>
+                    <p>
+                        Ferramenta de automação em Python para otimizar a auditoria de insumos. O script lê arquivos CSV de diferentes filiais, processa os dados com Pandas e gera um relatório analítico em Excel.
+                    </p>
+                    <div class="projeto-links">
+                        <a href="https://github.com/almdxx/sistema-auditoria" target="_blank"><i class="fa-brands fa-github"></i> Código no GitHub</a>
+                    </div>
+                </div>
+
+                <div class="projeto-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>API de Gerenciamento de Vendas</h3>
+                    <p>
+                        API RESTful para um sistema de vendas, desenvolvida com Python e FastAPI. Utiliza SQLAlchemy para o banco de dados e Pydantic para validação de dados, permitindo operações CRUD.
+                    </p>
+                     <div class="projeto-links">
+                        <a href="https://github.com/almdxx/Controle-de-Estoque" target="_blank"><i class="fa-brands fa-github"></i> Código no GitHub</a>
+                     </div>
+                </div>
+
+                <div class="projeto-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Portfólio de Marketing - Luisa Braga</h3>
+                    <p>
+                        Website de portfólio para uma profissional de Marketing e Audiovisual. A página apresenta suas competências, projetos e áreas de atuação, como campanhas digitais e produção de conteúdo.
+                    </p>
+                     <div class="projeto-links">
+                        <a href="https://almdxx.github.io/portifolio-luh/" target="_blank" class="live-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Site</a>
+                        <a href="https://github.com/almdxx/portifolio-luh" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
+                     </div>
+                </div>
+
+                <div class="projeto-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Página Comemorativa</h3>
+                    <p>
+                        Página web estática criada com HTML e CSS para celebrar uma data especial. Um projeto pessoal para demonstrar habilidades em desenvolvimento front-end e criação de interfaces.
+                    </p>
+                    <div class="projeto-links">
+                        <a href="https://almdxx.github.io/6meses/" target="_blank" class="live-demo"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Site</a>
+                        <a href="https://github.com/almdxx/6meses" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Carlos Eduardo - Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000, // Duração da animação
+          once: true, // Animar apenas uma vez
+      });
+    </script>
+    <script>
+        // Script para Efeito de Digitação
+        const headline = document.getElementById('headline-dinamica');
+        const text = 'Desenvolvedor em formação, apaixonado por tecnologia, aprendizado constante e por criar <strong>soluções digitais que realmente fazem a diferença</strong>.';
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < text.length) {
+                // Se encontrar a tag <strong>, adiciona a tag inteira de uma vez
+                if (text.substring(i, i + 8) === '<strong>') {
+                    const endTagIndex = text.indexOf('</strong>', i);
+                    headline.innerHTML += text.substring(i, endTagIndex + 9);
+                    i = endTagIndex + 9;
+                } else {
+                    headline.innerHTML += text.charAt(i);
+                    i++;
+                }
+                setTimeout(typeWriter, 40); // Velocidade da digitação
+            }
+        }
+        window.addEventListener('load', typeWriter);
+    </script>
 
 </body>
 </html>
